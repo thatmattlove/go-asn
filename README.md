@@ -12,8 +12,8 @@ Autonomous System Number Utility for Go
     <a href="https://app.codecov.io/gh/thatmattlove/go-asn">
         <img alt="Codecov" src="https://img.shields.io/codecov/c/github/thatmattlove/go-asn?style=for-the-badge">
     </a>
-    <a href="https://github.com/thatmattlove/go-asn/releases">
-        <img alt="GitHub release (latest SemVer)" src="https://img.shields.io/github/v/release/thatmattlove/go-asn?label=version&style=for-the-badge">
+    <a href="https://github.com/thatmattlove/go-asn/tags">
+        <img alt="GitHub tag (with filter)" src="https://img.shields.io/github/v/tag/thatmattlove/go-asn?style=for-the-badge">
     </a>
 
 </div>
