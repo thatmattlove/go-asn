@@ -13,7 +13,7 @@ Autonomous System Number Utility for Go
         <img alt="Codecov" src="https://img.shields.io/codecov/c/github/thatmattlove/go-asn?style=for-the-badge">
     </a>
     <a href="https://github.com/thatmattlove/go-asn/tags">
-        <img alt="GitHub tag (with filter)" src="https://img.shields.io/github/v/tag/thatmattlove/go-asn?style=for-the-badge">
+        <img alt="GitHub tag (with filter)" src="https://img.shields.io/github/v/tag/thatmattlove/go-asn?style=for-the-badge&label=Version">
     </a>
 
 </div>
