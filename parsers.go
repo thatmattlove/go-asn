@@ -2,7 +2,6 @@ package asn
 
 import (
 	"encoding/binary"
-	"errors"
 	"strconv"
 	"strings"
 )
@@ -35,13 +34,15 @@ func MustParse(d string) ASN {
 }
 
 // FromDecimal parses an ASN in decimal/asplain format and returns an error if the input is invalid.
-func FromDecimal(d string) (ASN, error) {
-	n64, err := strconv.ParseUint(d, 10, 32)
-	if err != nil {
-		if errors.Is(err, strconv.ErrRange) {
-			return nil, ErrOutOf4ByteRange
-		}
+func FromDecimal(i string) (ASN, error) {
+	matches := asDecimalPattern.FindStringSubmatch(i)
+	if len(matches) == 0 {
 		return nil, ErrInvalidInput
+	}
+	i = matches[len(matches)-1]
+	n64, err := strconv.ParseUint(i, 10, 32)
+	if err != nil {
+		return nil, ErrOutOf4ByteRange
 	}
 	n := uint32(n64)
 	a := make(ASN, BYTE_SIZE)
@@ -51,11 +52,13 @@ func FromDecimal(d string) (ASN, error) {
 
 // FromASDot parses an ASN in asdot format and returns an error if the input is invalid.
 func FromASDot(i string) (ASN, error) {
-	parts := strings.Split(strings.TrimSpace(i), ".")
-
-	if len(parts) != 2 {
+	matches := asdotPattern.FindStringSubmatch(i)
+	if len(matches) == 0 {
 		return nil, ErrInvalidInput
 	}
+	i = matches[len(matches)-1]
+
+	parts := strings.Split(strings.TrimSpace(i), ".")
 
 	asn := make(ASN, 4)
 

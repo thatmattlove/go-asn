@@ -99,6 +99,8 @@ func Test_FromASDot(t *testing.T) {
 		{"65000", asn.ErrInvalidInput},
 		{"65536.0", asn.ErrOutOf2ByteRange},
 		{"0.65536", asn.ErrOutOf2ByteRange},
+		{"0.9223372036854775808", asn.ErrInvalidInput},
+		{"9223372036854775808.0", asn.ErrInvalidInput},
 		{"thiswillfail", asn.ErrInvalidInput},
 		{"0.thiswillfail", asn.ErrInvalidInput},
 		{"thiswillfail.0", asn.ErrInvalidInput},
@@ -123,6 +125,7 @@ func Test_Parse(t *testing.T) {
 		{"6.1861", "395077"},
 		{"395077", "395077"},
 		{"65000", "65000"},
+		{"AS65000", "65000"},
 	}
 	for _, c := range casesDecimal {
 		c := c

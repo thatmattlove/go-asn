@@ -10,6 +10,6 @@ const (
 )
 
 var (
-	asdotPattern     = regexp.MustCompile(`^\d+\.\d+$`)
-	asDecimalPattern = regexp.MustCompile(`^\d+$`)
+	asdotPattern     = regexp.MustCompile(`^(AS|as)?(\d+\.\d+)$`)
+	asDecimalPattern = regexp.MustCompile(`^(AS|as)?(\d+)$`)
 )
