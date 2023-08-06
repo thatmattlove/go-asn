@@ -15,6 +15,9 @@ Autonomous System Number Utility for Go
     <a href="https://github.com/thatmattlove/go-asn/tags">
         <img alt="GitHub tag (with filter)" src="https://img.shields.io/github/v/tag/thatmattlove/go-asn?style=for-the-badge&label=Version">
     </a>
+    <a href="https://pkg.go.dev/github.com/thatmattlove/go-asn">
+        <img alt="GoDoc Reference" src="https://img.shields.io/badge/godoc-reference-5272B4.svg?style=for-the-badge">
+    </a>
 
 </div>
 
